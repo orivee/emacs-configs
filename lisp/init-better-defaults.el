@@ -51,4 +51,7 @@
 					 try-expand-line
 					 try-complete-lisp-symbol-partially
 					 try-complete-lisp-symbol))
+
+;; less tying when Emacs ask you yes or no
+(fset 'yes-or-no' 'y-or-n')
 (provide 'init-better-defaults)
