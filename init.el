@@ -1,46 +1,13 @@
+
+(add-to-list 'load-path "~/.emacs.d/lisp")
+(require 'init-packages)
+
 (setq url-proxy-services
    '(("no_proxy" . "^\\(localhost\\|192.*\\)")
      ("http" . "127.0.0.1:7777")))
 
+(setq ring-bell-function 'ignore)
 
-  (when (>= emacs-major-version 24)
-    (require 'package)
-    (package-initialize)
-    (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-    ) 
-    (require 'cl)
-
-    ;; add whatevar packages you want here
-    (defvar orivee/packages '(
-                             company
-			     color-theme-sanityinc-tomorrow
-			     hungry-delete
-			     swiper
-			     counsel
-			     smartparens
-			     exec-path-from-shell
-                             ) "Default package")
-
-    (defun orivee/packages-installed-p ()
-      (loop for pkg in orivee/packages
-            when (not (package-installed-p pkg)) do (return nil)
-            finally (return t)))
-    
-    (unless (orivee/packages-installed-p)
-      (message "%s" "Refreshing package database...")
-      (package-refresh-contents)
-      (dolist (pkg orivee/packages)
-        (when (not (package-installed-p pkg))
-          (package-install pkg))))
-
-;; let emacs could find the execute files
-(when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize))
-(require 'hungry-delete)
-(global-hungry-delete-mode)
-
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
 (global-set-key "\C-s" 'swiper)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "M-x") 'counsel-M-x)
@@ -48,11 +15,9 @@
 (global-set-key (kbd "C-x f") 'counsel-describe-function)
 (global-set-key (kbd "C-x C-v") 'counsel-describe-variable)
 
-(require 'smartparens-config)
-(add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
 
 (tool-bar-mode -1) ;; turn off tool-bar
-(scroll-bar-mode -1) ;; turn off scroll-bar
+(scroll-bar-mode -1) ;; turn off scroll-bar 
 (setq inhibit-splash-screen t) ;; turn off splash screen
 (global-linum-mode t) ;; show line number
  
@@ -62,7 +27,7 @@
 (global-set-key (kbd "<f2>") 'open-init-file)
 
 (recentf-mode t)
-(global-company-mode t)
+
 
 (setq-default cursor-type 'bar) ;; change cursor type 
 
@@ -83,7 +48,7 @@
 
 (global-hl-line-mode t)
 
-(load-theme 'sanityinc-tomorrow-bright t)
+
 
 (global-set-key (kbd "C-h C-f") 'find-function)
 (global-set-key (kbd "C-h C-v") 'find-variable)
@@ -91,6 +56,9 @@
 
 (setq org-agenda-files '("~/working/todo"))
 (global-set-key (kbd "C-c a") 'org-agenda)
+
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
