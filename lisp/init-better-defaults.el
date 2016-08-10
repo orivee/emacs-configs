@@ -22,6 +22,7 @@
 
 ;; (add-hook 'emacs-lisp-mode-hook 'show-paren-match)
 
+;; improve indent region
 (defun indent-buffer ()
   "Indent the currently visited buffer."
   (interactive)
