@@ -53,5 +53,14 @@
 					 try-complete-lisp-symbol))
 
 ;; less tying when Emacs ask you yes or no
-(fset 'yes-or-no' 'y-or-n')
+(fset 'yes-or-no 'y-or-n)
+
+(setq dired-recursive-copies 'always)
+(setq dired-recursive-deletes 'always)
+
+(put 'dired-find-alternate-file 'disabled nil)
+
+(require 'dired-x)
+
+(setq dired-dwim-target t)
 (provide 'init-better-defaults)
