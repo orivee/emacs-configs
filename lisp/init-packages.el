@@ -1,4 +1,8 @@
- (when (>= emacs-major-version 24)
+(setq url-proxy-services
+   '(("no_proxy" . "^\\(localhost\\|192.*\\)")
+     ("http" . "127.0.0.1:7777")))
+
+(when (>= emacs-major-version 24)
     (require 'package)
     (package-initialize)
     (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -36,7 +40,7 @@
 (require 'hungry-delete)
 (global-hungry-delete-mode)
 
-(require 'smartparens-config)
+;;(require 'smartparens-config)
 ;;(add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
 (smartparens-global-mode t)
 
