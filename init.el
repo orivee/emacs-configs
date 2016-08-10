@@ -67,6 +67,7 @@
 (setq-default cursor-type 'bar) ;; change cursor type 
 
 (setq make-backup-files nil) ;; disable backup files
+(setq auto-save-default nil) ;; disable auto-save
 
 (require 'org)
 (setq org-src-fontify-natively t)
