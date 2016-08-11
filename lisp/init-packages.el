@@ -20,6 +20,8 @@
 			  exec-path-from-shell
 			  popwin
 			  web-mode
+			  expand-region
+			  iedit
 			  ) "Default package")
 
 (defun orivee/packages-installed-p ()

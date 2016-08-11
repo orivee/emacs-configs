@@ -27,4 +27,7 @@
 
 (global-set-key (kbd "M-s o") 'occur-dwim)
 
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+(global-set-key (kbd "C-;") 'iedit-mode)
 (provide 'init-keybindings)
