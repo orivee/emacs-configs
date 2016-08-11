@@ -25,4 +25,6 @@
 
 (global-set-key (kbd "C-c t i") 'my-toggle-web-indent)
 
+(global-set-key (kbd "M-s o") 'occur-dwim)
+
 (provide 'init-keybindings)
