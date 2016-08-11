@@ -19,6 +19,7 @@
 			  smartparens
 			  exec-path-from-shell
 			  popwin
+			  web-mode
 			  ) "Default package")
 
 (defun orivee/packages-installed-p ()
@@ -47,6 +48,34 @@
 
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
+
+;; config web-mode for html, css files
+;;(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(setq auto-mode-alist
+      (append
+       '(("\\.html\\'" . web-mode)
+	 ("\\.css\\'" . web-mode))
+       auto-mode-alist))
+
+;; config for web mode
+(defun my-web-mode-indent-setup ()
+  (setq web-mode-markup-indent-offset 2) ;; HTML element offset indentation
+  (setq web-mode-css-indent-offset 2)  ;; CSS offset indentation
+  (setq web-mode-code-indent-offset 2)   ;; Script/code offset indentation (for JavaScript, Java, PHP, Ruby, VBScript, Python, etc.)
+  )
+
+(add-hook 'web-mode-hook 'my-web-mode-indent-setup)
+
+(defun my-toggle-web-indent ()
+  (interactive)
+  ;; web development
+  (if (eq major-mode 'web-mode)
+      (progn
+	(setq web-mode-markup-indent-offset (if (= web-mode-markup-indent-offset 2) 4 2))
+	(setq web-mode-css-indent-offset (if (= web-mode-css-indent-offset 2) 4 2))
+	(setq web-mode-code-indent-offset (if (= web-mode-code-indent-offset 2) 4 2))))
+  
+  )
 
 (global-company-mode t)
 
