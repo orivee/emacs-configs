@@ -80,7 +80,11 @@
 
 (global-company-mode t)
 
-(load-theme 'sanityinc-tomorrow-bright t)
+;; (load-theme 'sanityinc-tomorrow-bright t)
+
+;; load the theme until startup initialization is complete
+(add-hook 'after-init-hook 
+      (lambda () (load-theme 'sanityinc-tomorrow-bright t)))
 
 (require 'popwin)
 (popwin-mode t)
