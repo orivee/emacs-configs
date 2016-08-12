@@ -7,6 +7,8 @@
 
 (global-hl-line-mode t)
 
+(setq-default fill-column 80)
+
 (set-default-font "PragmataPro-11")
 (provide 'init-ui.el)
  
