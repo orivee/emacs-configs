@@ -55,8 +55,7 @@
 ;;(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (setq auto-mode-alist
       (append
-       '(("\\.html\\'" . web-mode)
-	 ("\\.css\\'" . web-mode))
+       '(("\\.html\\'" . web-mode))
        auto-mode-alist))
 
 ;; config for web mode
