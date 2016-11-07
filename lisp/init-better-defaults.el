@@ -1,5 +1,9 @@
 (setq ring-bell-function 'ignore)
 
+(prefer-coding-system 'utf-8) ;; change Emacs default coding system
+(setq coding-system-for-read 'utf-8)
+(setq coding-system-for-write 'utf-8)
+
 (global-linum-mode t) ;; show line number
 
 (delete-selection-mode t)

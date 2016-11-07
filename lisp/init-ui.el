@@ -9,6 +9,6 @@
 
 (setq-default fill-column 80)
 
-(set-default-font "PragmataPro-11")
+(set-default-font "Input-11")
 (provide 'init-ui.el)
  
